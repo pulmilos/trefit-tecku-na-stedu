@@ -1,6 +1,7 @@
 input.onButtonPressed(Button.A, function () {
     if (sprite.get(LedSpriteProperty.X) == 2) {
         game.addScore(1)
+        rychlost = rychlost - 5
     } else {
         game.gameOver()
     }
@@ -8,6 +9,7 @@ input.onButtonPressed(Button.A, function () {
 input.onButtonPressed(Button.B, function () {
     if (sprite.get(LedSpriteProperty.X) == 2) {
         game.addScore(1)
+        rychlost = rychlost - 20
     } else {
         game.gameOver()
     }
@@ -28,6 +30,6 @@ if (input.logoIsPressed()) {
 }
 basic.forever(function () {
     sprite.move(1)
-    basic.pause(rychlost - game.score())
+    basic.pause(rychlost)
     sprite.ifOnEdgeBounce()
 })
